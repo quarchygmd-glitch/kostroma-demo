@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f3f5f2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121a16" media="(prefers-color-scheme: dark)">
+<title>Салон цветов · цветы, Иваново</title>
+<meta name="description" content="Салон цветов, цветы, Иваново. Демо-концепт сайта.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Forum&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: одна колонка для телефона, каталог-сетка; вверху лента «демо», липкая кнопка звонка снизу */
+:root{color-scheme:light dark;
+  --bg:#f3f5f2; --surface:#ffffff; --ink:#1d2a24; --muted:#5c6b63; --line:#d9e0db;
+  --fir:#1f4d3b; --peony:#c8466e; --peony-soft:#f6dde5; --leaf:#7aa58a;
+  --display:"Forum","Georgia",serif; --body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121a16; --surface:#1a241f; --ink:#e7ede9; --muted:#9aaba1; --line:#2c3a33;
+  --fir:#8fc4a7; --peony:#ec7aa0; --peony-soft:#3a2129; --leaf:#5f8a70; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121a16; --surface:#1a241f; --ink:#e7ede9; --muted:#9aaba1; --line:#2c3a33;
+  --fir:#8fc4a7; --peony:#ec7aa0; --peony-soft:#3a2129; --leaf:#5f8a70; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;overflow-wrap:break-word}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0;line-height:1.1}
+h2{font-size:clamp(28px,5vw,40px)}
+p{margin:0}
+.demo{background:var(--peony-soft);color:var(--ink);font-size:13px;text-align:center}
+.demo .wrap{padding-block:8px}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:18px;flex-wrap:wrap}
+.logo{font-family:var(--display);font-size:26px;color:var(--fir)}
+.logo small{display:block;font-family:var(--body);font-size:12px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.phone{display:flex;align-items:center;gap:8px;font-weight:600;font-variant-numeric:tabular-nums}
+.phone a{text-decoration:none;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;padding:13px 22px;font:600 15px var(--body);cursor:pointer;text-decoration:none}
+.btn-main{background:var(--peony);color:#fff}
+.btn-ghost{background:transparent;color:var(--fir);border:1.5px solid var(--fir)}
+.btn-sm{padding:7px 14px;font-size:13px}
+.btn:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--leaf);outline-offset:2px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center;padding-block:24px 40px}
+.hero h1{font-size:clamp(38px,7vw,64px);color:var(--fir)}
+.hero p.lead{margin-top:16px;font-size:18px;color:var(--muted);max-width:36ch}
+.hero .ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.facts{display:flex;gap:20px;flex-wrap:wrap;margin-top:24px;font-size:14px;color:var(--muted)}
+.facts b{display:block;color:var(--ink);font-size:20px;font-variant-numeric:tabular-nums}
+.praise{margin-top:20px;font-size:14px;color:var(--muted);max-width:44ch}
+.praise b{color:var(--ink);font-weight:600}
+figure{margin:0}
+.hero-fig figcaption,.note{font-size:12px;color:var(--muted);text-align:center;margin-top:8px}
+.note{text-align:left;margin-top:16px;font-size:13px}
+.hero-art{aspect-ratio:1/1;max-width:100%;border-radius:50% 50% 24px 24px;background:radial-gradient(circle at 50% 35%,var(--peony-soft),var(--bg) 70%);display:grid;place-items:center;overflow:hidden}
+.hero-art.photo{aspect-ratio:4/5;border-radius:160px 160px 24px 24px}
+.march{background:var(--fir);color:#f3f5f2}
+.march .wrap{padding-block:36px;display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center}
+.march .count{font-family:var(--display);font-size:72px;line-height:1;font-variant-numeric:tabular-nums}
+.march .count small{display:block;font-family:var(--body);font-size:13px;letter-spacing:.08em;text-transform:uppercase;opacity:.8}
+.march h2{color:#fff}
+.march p{opacity:.85;margin-top:8px;max-width:52ch}
+.march .btn-main{background:#fff;color:#1f4d3b}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .march{background:#1d3a2e}}
+:root[data-theme="dark"] .march{background:#1d3a2e}
+section.block .wrap{padding-block:48px}
+.head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:7px 14px;font:500 14px var(--body);cursor:pointer}
+.chip[aria-pressed="true"]{border-color:var(--fir);background:var(--fir);color:var(--bg)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.card{background:var(--surface);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.card .pic{aspect-ratio:4/3;max-width:100%;display:grid;place-items:center}
+.card .pic.photo{aspect-ratio:4/5;position:relative;overflow:hidden;flex-shrink:0;background:var(--peony-soft)}
+.card .pic.photo img{position:absolute;inset:0}
+.card .pic img,.hero-art img{width:100%;height:100%;object-fit:cover;display:block}
+.card .pic .cap{position:absolute;left:8px;top:8px;background:rgba(0,0,0,.55);color:#fff;font-size:11px;padding:3px 8px;border-radius:999px}
+.card .body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card h3{font-size:24px}
+.card p{font-size:14px;color:var(--muted)}
+.card .row{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:auto;padding-top:8px}
+.price{font-weight:700;font-size:18px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.step{border-top:2px solid var(--fir);padding-top:14px}
+.step b{font-family:var(--display);font-size:26px;font-weight:400;display:block;color:var(--fir)}
+.step p{color:var(--muted);font-size:15px;margin-top:4px}
+.order{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+form{background:var(--surface);border-radius:18px;padding:20px;display:grid;gap:12px}
+label{display:grid;gap:4px;font-size:13px;font-weight:600;color:var(--muted)}
+input,select,textarea{font:15px var(--body);color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:11px 12px;width:100%}
+.form-note{font-size:13px;color:var(--muted)}
+.ok{background:var(--peony-soft);border-radius:10px;padding:12px;font-size:14px}
+.info{display:grid;gap:16px}
+.info dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:8px 16px;font-size:15px}
+.info dt{color:var(--muted)}
+.info dd{margin:0;font-variant-numeric:tabular-nums}
+.info dd a{font-weight:600;white-space:nowrap}
+.info .ctas{display:flex;gap:10px;flex-wrap:wrap}
+footer .wrap{padding-block:28px 96px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);display:grid;gap:6px}
+footer a{white-space:nowrap}
+.callbar{position:fixed;left:0;right:0;bottom:0;padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:var(--surface);border-top:1px solid var(--line);display:none;gap:8px;z-index:5}
+.callbar .btn{flex:1}
+@media (max-width:760px){
+  .hero .wrap,.order,.march .wrap{grid-template-columns:1fr}
+  .hero-fig{max-width:300px;width:100%;margin:0 auto;order:-1}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .steps{grid-template-columns:1fr}
+  .callbar{display:flex}
+}
+@media (max-width:440px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.card h3{font-size:18px}.card .body{padding:10px 12px 12px}.card .row{flex-direction:column;align-items:stretch}.hero-fig{max-width:240px}}
+html{scroll-padding-top:16px;scroll-padding-bottom:88px}
+a,button,.chip{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.skip{position:absolute;left:8px;top:-60px;z-index:10;background:var(--surface);color:var(--ink);padding:8px 14px;border-radius:999px}
+.skip:focus{top:8px}
+.btn-main:hover{filter:brightness(1.08)}
+.btn-ghost:hover{background:var(--fir);color:var(--bg)}
+.march .btn-main:hover{background:var(--peony-soft);filter:none}
+.chip:hover{border-color:var(--fir)}
+[aria-invalid="true"]{border-color:var(--peony)}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">К содержанию</a>
+<div class="demo"><div class="wrap">Демо-концепт, не официальный сайт. Фото заменим на ваши.</div></div>
+
+<header><div class="wrap">
+  <div class="logo" translate="no">Салон цветов<small>цветы · Иваново</small></div>
+  <div class="phone"><a href="tel:+79051558172">+7 905 155-81-72</a></div>
+</div></header>
+
+<main id="main">
+<section class="hero"><div class="wrap">
+  <div>
+    <h1>Свежие цветы в Иванове</h1>
+    <p class="lead">Большой ассортимент свежих цветов, помогут с выбором. Работаем каждый день.</p>
+    <div class="ctas">
+      <a class="btn btn-main" href="tel:+79051558172">Позвонить</a>
+    </div>
+    <div class="facts"><div><b>5</b>рейтинг в 2ГИС</div><div><b>6</b>оценок</div></div>
+    <p class="praise"><b>За что хвалят в отзывах:</b> большой ассортимент свежих цветов, помогают с выбором.</p>
+  </div>
+  <figure class="hero-fig"><div class="hero-art photo"><img src="photos/01.jpg" alt="Бежевый павильон со стеклянными стенами и цветами в витрине" width="900" height="1200" fetchpriority="high"></div><figcaption>фото заменим на ваши</figcaption></figure>
+</div></section>
+
+<section class="march"><div class="wrap">
+  <div class="count"><span id="days">—</span><small>дней до 8 марта</small></div>
+  <div><h2>Предзаказ на 8 марта</h2><p>Обсудите букет и время доставки заранее: позвоните в магазин или оставьте заявку на сайте.</p></div>
+  <a class="btn btn-main" href="#order" data-pre="1">Оформить предзаказ</a>
+</div></section>
+
+<section class="block" style="background:var(--surface)"><div class="wrap">
+  <div class="head"><h2>Как заказать</h2></div>
+  <div class="steps">
+    <div class="step"><b>Опишите</b><p>Опишите повод, бюджет и любимые цветы: чем точнее, тем проще подобрать букет.</p></div>
+    <div class="step"><b>Позвоните</b><p>По номеру <a href="tel:+79051558172">+7 905 155-81-72</a> или оставьте заявку на сайте.</p></div>
+    <div class="step"><b>Заберите или закажите доставку</b><p>Условия доставки уточняйте по телефону.</p></div>
+  </div>
+</div></section>
+
+<section class="block" id="order"><div class="wrap order">
+  <form id="f" novalidate>
+    <h2>Заявка</h2>
+    <label for="o-n">Ваше имя<input id="o-n" name="name" autocomplete="name" placeholder="Анна"></label>
+    <label for="o-p">Телефон<input id="o-p" name="phone" type="tel" autocomplete="tel" placeholder="+7"></label>
+    <label for="o-d">Когда нужен заказ<input id="o-d" name="when" autocomplete="off" placeholder="Например, 8 марта к 10:00…"></label>
+    <label for="o-c">Пожелания<textarea id="o-c" name="comment" autocomplete="off" rows="3" placeholder="Повод, бюджет, цвет цветов…"></textarea></label>
+    <button class="btn btn-main" type="submit">Отправить заявку</button>
+    <p class="form-note">Это демо: заявка никуда не отправляется.</p>
+    <div class="ok" id="ok" role="status" aria-live="polite" hidden></div>
+  </form>
+  <div class="info">
+    <h2>Магазин и доставка</h2>
+    <dl>
+      <dt>Часы</dt><dd>Пн–Сб 08:00–20:00<br>Вс 09:00–20:00</dd>
+      <dt>Телефон</dt><dd><a href="tel:+79051558172">+7 905 155-81-72</a></dd>
+      <dt>Доставка</dt><dd>Доставка указана в карточке магазина. Условия уточняйте по телефону.</dd>
+    </dl>
+    <div class="ctas">
+      <a class="btn btn-main" href="tel:+79051558172">Позвонить</a>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <p>Салон цветов · цветы, Иваново</p>
+  <p><a href="tel:+79051558172">+7 905 155-81-72</a></p>
+  <p>Демо-концепт, не официальный сайт. Фото заменим на ваши.</p>
+</div></footer>
+
+<div class="callbar"><a class="btn btn-ghost" href="#order">Заявка</a><a class="btn btn-main" href="tel:+79051558172">Позвонить</a></div>
+
+<script>
+document.addEventListener("click",e=>{if(e.target.closest("[data-pre]"))document.getElementById("o-d").value="8 марта"});
+const now=new Date();let m8=new Date(now.getFullYear(),2,8);if(now>m8)m8=new Date(now.getFullYear()+1,2,8);
+document.getElementById("days").textContent=Math.ceil((m8-now)/864e5);
+document.getElementById("f").addEventListener("submit",e=>{e.preventDefault();const ok=document.getElementById("ok");
+ const n=document.getElementById("o-n").value.trim(),p=document.getElementById("o-p").value.trim();
+ const fn=document.getElementById("o-n"),fp=document.getElementById("o-p");fn.setAttribute("aria-invalid",!n);fp.setAttribute("aria-invalid",!p);if(!n||!p)(!n?fn:fp).focus();
+ ok.hidden=false;ok.textContent=(!n||!p)?"Укажите имя и телефон, чтобы вам могли перезвонить.":`Спасибо, ${n}! На настоящем сайте заявка сразу придёт в магазин. В демо она никуда не отправляется.`});
+</script>
+</body>
+</html>
